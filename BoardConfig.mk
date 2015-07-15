@@ -16,15 +16,15 @@
 
 LOCAL_PATH := device/samsung/zeroltexx
 
-# inherit from common gsm zeroflte
-include device/samsung/zero-common/BoardConfigCommon.mk
-
 # Assert
-TARGET_OTA_ASSERT_DEVICE := zeroltexx,zerolte
+TARGET_OTA_ASSERT_DEVICE := zeroltexx,zerolte,zeroflte
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # Kernel
 TARGET_KERNEL_CONFIG := cmconfig_defconfig
-TARGET_PREBUILT_KERNEL := device/samsung/zeroltexx/kernel
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
+
+# inherit from zero-common
+include device/samsung/zero-common/BoardConfigCommon.mk
